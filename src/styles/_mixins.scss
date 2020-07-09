@@ -1,0 +1,16 @@
+$sm: 540px;
+$md: 720px;
+$lg: 960px;
+$xl: 1140px;
+
+@mixin small {
+  @media only screen and (min-width: $sm) {
+      @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: $md) {
+      @content;
+  }
+}

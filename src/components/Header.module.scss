@@ -1,0 +1,29 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.container {
+  padding: 50px;
+  margin-bottom: 50px;
+  background-color: $blue;
+
+  @include small {
+    padding: 100px;
+  }
+}
+
+.text {
+  margin: 0;
+  font-size: 28px;
+  text-align: center;
+
+  @include small {
+    font-size: 32px;
+  }
+
+  a {
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    background-color: $primary;
+  }
+}

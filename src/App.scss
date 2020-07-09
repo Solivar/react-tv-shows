@@ -1,0 +1,38 @@
+@import './styles/variables';
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited,
+  &:link {
+    color: #851e3e;
+  }
+
+  &:active,
+  &:hover {
+    color: #251e3e;
+  }
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+.font-serif {
+  font-family: Times, 'Times New Roman', serif;
+}
+
+.font-sans-serif {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.page-container {
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto 50px;
+}

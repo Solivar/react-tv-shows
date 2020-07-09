@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  p {
+    &::before {
+      width: 30px;
+      border-top: 1px solid #000000;
+      display: block;
+      margin: 0 auto 15px;
+      content: '';
+    }
+  }
+}
