@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import showsData from '../../shows.json'
+import styles from './Grid.module.scss'
+
 const Grid = () => {
-  // http://api.tvmaze.com/shows/269
+  const { shows } = showsData;
 
   return(
-    <div>
-      <Link to="show/269">
-        <img src="http://static.tvmaze.com/uploads/images/medium_portrait/48/122213.jpg" alt="Peaky Blinders"/>
-      </Link>
-
-      <Link to="show/1871">
-        <img src="http://static.tvmaze.com/uploads/images/medium_portrait/211/528026.jpg" alt="Mr. Robot"/>
-      </Link>
-    </div>
+    <ul className={styles['shows-grid']}>
+      {shows.map((show) => {
+        return <li key={show.tvMazeId}>
+          <Link to={`show/${show.tvMazeId}`}>
+            <img src={show.img} alt={show.name}/>
+          </Link>
+        </li>
+      })}
+    </ul>
   );
 }
 

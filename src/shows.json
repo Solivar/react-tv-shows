@@ -1,0 +1,44 @@
+{
+  "shows": [
+    {
+      "name": "Peaky Blinders",
+      "tvMazeId": 269,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/48/122213.jpg"
+    },
+    {
+      "name": "Mr. Robot",
+      "tvMazeId": 1871,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/211/528026.jpg"
+    },
+    {
+      "name": "Better Call Saul",
+      "tvMazeId": 618,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/235/587815.jpg"
+    },
+    {
+      "name": "Breaking Bad",
+      "tvMazeId": 169,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
+    },
+    {
+      "name": "Marvel's The Punisher",
+      "tvMazeId": 16544,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/179/448895.jpg"
+    },
+    {
+      "name": "Narcos",
+      "tvMazeId": 2705,
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/166/416516.jpg"
+    },
+    {
+      "name": "Narcos: Mexico",
+      "tvMazeId": "37787",
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/238/596530.jpg"
+    },
+    {
+      "name": "Suits",
+      "tvMazeId": "172",
+      "img": "http://static.tvmaze.com/uploads/images/medium_portrait/205/513582.jpg"
+    }
+  ]
+}

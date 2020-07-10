@@ -15,7 +15,7 @@ const Show = () => {
     }
 
     fetchData();
-  }, [])
+  }, [ id ])
 
   return(
     <div>
