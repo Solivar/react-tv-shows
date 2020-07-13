@@ -13,6 +13,8 @@ import Grid from './components/shows/Grid';
 import Header from './components/Header';
 import Show from './components/shows/Show';
 
+import shows from './shows.json'
+
 function App() {
   return (
     <Router>
@@ -21,9 +23,9 @@ function App() {
         <div className="page-container">
           <Switch>
             <Route exact path="/">
-              <Grid/>
+              <Grid shows={shows}/>
             </Route>
-            <Route path="/show/:id" children={<Show/>} />
+            <Route path="/show/:id" children={<Show shows={shows}/>}/>
             <Route path="*">
               <NotFound/>
             </Route>
