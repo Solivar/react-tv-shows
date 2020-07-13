@@ -1,4 +1,5 @@
 @import './styles/variables';
+@import '~styles/mixins';
 
 body {
   margin: 0;
@@ -10,12 +11,12 @@ a {
 
   &:visited,
   &:link {
-    color: #851e3e;
+    color: $primary;
   }
 
   &:active,
   &:hover {
-    color: #251e3e;
+    color: $secondary;
   }
 }
 
@@ -35,4 +36,36 @@ p {
   padding: 10px;
   max-width: 960px;
   margin: 0 auto 25px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  @include small {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+
+    @include small {
+      width: 50%;
+    }
+
+    @include medium {
+      width: calc(100% / 3);
+    }
+
+    @include large {
+      width: 25%;
+      margin-bottom: 25px;
+    }
+  }
 }

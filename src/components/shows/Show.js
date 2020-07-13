@@ -3,13 +3,16 @@ import { useHistory, useParams } from "react-router-dom";
 
 import axios from 'axios';
 
+import CastGrid from '../cast/Grid';
 import Loader from '../Loader';
+import styles from './Show.module.scss'
 
 const Show = ({ shows }) => {
   let { id } = useParams();
   const history = useHistory();
   const [show, setShow] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const showExists = () => {
@@ -23,17 +26,21 @@ const Show = ({ shows }) => {
 
       try {
         const res = await axios.get(`http://api.tvmaze.com/shows/${id}?embed=cast`);
-        const { name, summary } = res.data;
+        const { name, summary, genres } = res.data;
 
         const show = {
           name,
           summary,
+          genres,
+          cast: res.data._embedded.cast
         };
 
         setShow(show);
-        setIsLoading(false);
       } catch (error) {
-        history.push('/');
+        console.log(error);
+        setHasError(true);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -53,11 +60,27 @@ const Show = ({ shows }) => {
 
   if (isLoading) {
     return <Loader/>
+  } else if(hasError) {
+    return <p>Something went wrong. Try again later</p>
   } else {
     return (
       <div>
         <h2>{show.name}</h2>
-        <p>{ stripHtml(show.summary)}</p>
+        <p>{stripHtml(show.summary)}</p>
+        { show.genres.length &&
+          <ul className={styles.genres}>
+            <strong>Genres: </strong>
+            {show.genres.map((genre) => {
+              return(
+                <li key={genre}>
+                  {genre}
+                </li>
+              )
+            })}
+          </ul>
+        }
+        <h2>Cast</h2>
+        <CastGrid actors={show.cast} />
       </div>
     );
   }
