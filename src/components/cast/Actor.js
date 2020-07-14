@@ -3,13 +3,19 @@ import React from 'react';
 import styles from './Actor.module.scss'
 
 const Actor = ({ actor }) => {
+  let image = actor.character.image ? actor.character.image.medium : null;
+
+  if (!image) {
+    image = actor.person.image ? actor.person.image.medium : null;
+  }
+
   const style = {
-    backgroundImage: actor.character.image ? `url(${actor.character.image.medium})` : '',
+    backgroundImage: image ? `url(${image})` : '',
   }
   return(
     <div className={styles.container} style={style}>
       <div className={styles.character}>
-        { !actor.character.image &&
+        { !image &&
           <p className={styles['no-image']}>No image</p>
         }
         <p className={styles.name}>{actor.character.name}</p>
