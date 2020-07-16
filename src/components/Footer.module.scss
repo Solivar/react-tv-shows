@@ -3,11 +3,12 @@
   justify-content: center;
 
   p {
+    margin-bottom: 50px;
     &::before {
       width: 30px;
       border-top: 1px solid #000000;
       display: block;
-      margin: 0 auto 15px;
+      margin: 0 auto 25px;
       content: '';
     }
   }
