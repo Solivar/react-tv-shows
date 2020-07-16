@@ -17,7 +17,7 @@ import shows from './shows.json'
 
 function App() {
   return (
-    <Router>
+    <Router basename="react-tv-shows">
       <div>
         <Header/>
         <div className="page-container">
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/">
               <Grid showsData={shows}/>
             </Route>
-            <Route path="/show/:id" children={<Show showsData={shows}/>}/>
+            <Route path="/show/:id" children={<Show shows={shows}/>}/>
             <Route path="*">
               <NotFound/>
             </Route>
