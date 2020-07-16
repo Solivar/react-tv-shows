@@ -23,8 +23,6 @@ const Show = ({ shows }) => {
     }
 
     const fetchData = async () => {
-      console.log(id);
-
       try {
         const res = await axios.get(`http://api.tvmaze.com/shows/${id}?embed=cast`);
         const { name, summary, genres } = res.data;

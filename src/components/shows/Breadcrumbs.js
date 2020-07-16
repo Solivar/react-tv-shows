@@ -7,7 +7,7 @@ const Breadcrumbs = ({ showName }) => {
     <nav >
       <Link to="/">Shows</Link>
       <span className="mr ml font-bold">/</span>
-      <span className="link-active font-bold">{showName}</span>
+      <span className="link-active">{showName}</span>
     </nav>
   );
 }

@@ -23,9 +23,9 @@ function App() {
         <div className="page-container">
           <Switch>
             <Route exact path="/">
-              <Grid shows={shows}/>
+              <Grid showsData={shows}/>
             </Route>
-            <Route path="/show/:id" children={<Show shows={shows}/>}/>
+            <Route path="/show/:id" children={<Show showsData={shows}/>}/>
             <Route path="*">
               <NotFound/>
             </Route>
