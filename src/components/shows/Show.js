@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 import axios from 'axios';
 
+import Breadcrumbs from './Breadcrumbs';
 import CastGrid from '../cast/Grid';
 import Loader from '../Loader';
 import styles from './Show.module.scss'
@@ -65,6 +66,7 @@ const Show = ({ shows }) => {
   } else {
     return (
       <div>
+        <Breadcrumbs showName={show.name}/>
         <h2>{show.name}</h2>
         <p>{stripHtml(show.summary)}</p>
         { show.genres.length &&

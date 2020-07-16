@@ -20,6 +20,22 @@ a {
   }
 }
 
+.link-active {
+  color: $secondary;
+}
+
+.mr {
+  margin-right: 15px;
+}
+
+.ml {
+  margin-left: 15px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
 p {
   margin: 0 0 15px 0;
 }
