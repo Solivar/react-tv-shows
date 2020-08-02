@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 
 import './App.scss';
@@ -17,7 +18,7 @@ import shows from './shows.json'
 
 function App() {
   return (
-    <Router basename="react-tv-shows">
+    <HashRouter>
       <div>
         <Header/>
         <div className="page-container">
@@ -33,7 +34,7 @@ function App() {
         </div>
         <Footer/>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
